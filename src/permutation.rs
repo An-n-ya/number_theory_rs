@@ -100,6 +100,7 @@ pub fn calc_permutation_count(n: usize) -> usize {
     res
 }
 
+
 #[cfg(test)]
 mod tests {
     use std::collections::HashSet;
