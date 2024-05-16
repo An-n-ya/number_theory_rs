@@ -36,16 +36,20 @@ fn calc_inversions_quick_sort(vec: &[usize]) -> usize {
                 big_ind.push(j);
             }
         }
-        let small_ind_len = small_ind.len();
-        let big_ind_len = big_ind.len();
-        let pivot_pos = small_ind_len + low;
-        for j in 0..small_ind_len {
-            vec[j + low] = old_v[small_ind[j]];
+        let perm = [small_ind, vec![low], big_ind].concat();
+        for (ind, p) in perm.iter().enumerate() {
+            vec[low + ind] = old_v[*p];
         }
-        vec[pivot_pos] = pivot;
-        for j in 0..big_ind_len {
-            vec[j + pivot_pos + 1] = old_v[big_ind[j]];
-        }
+        // let small_ind_len = small_ind.len();
+        // let big_ind_len = big_ind.len();
+        // let pivot_pos = small_ind_len + low;
+        // for j in 0..small_ind_len {
+        //     vec[j + low] = old_v[small_ind[j]];
+        // }
+        // vec[pivot_pos] = pivot;
+        // for j in 0..big_ind_len {
+        //     vec[j + pivot_pos + 1] = old_v[big_ind[j]];
+        // }
         // let mut vv = vec![];
         // for n in &v {
         //     vv.push(vec[*n]);

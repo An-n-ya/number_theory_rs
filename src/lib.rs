@@ -7,6 +7,8 @@ pub mod permutation;
 
 pub mod inversions;
 
+pub mod determination;
+
 #[cfg(test)]
 mod tests {
     use std::{thread::sleep, time::Duration};
